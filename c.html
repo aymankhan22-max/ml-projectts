@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+      }
+
+      .container {
+        width: 400px;
+        margin: 50px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customer Churn Prediction</h2>
+
+      <form action="/predict" method="post">
+        <!-- Numerical Inputs -->
+        <label>Age</label>
+        <input type="number" name="age" required />
+
+        <label>Tenure (Months)</label>
+        <input type="number" name="tenure_months" required />
+
+        <label>Monthly Charges</label>
+        <input type="number" step="0.01" name="monthly_charges" required />
+
+        <label>Support Calls</label>
+        <input type="number" name="support_calls" required />
+
+        <!-- Gender -->
+        <label>Gender</label>
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+
+        <!-- Contract Type -->
+        <label>Contract Type</label>
+        <select name="contract" required>
+          <option value="">Select</option>
+          <option value="Month-to-month">Month-to-month</option>
+          <option value="One year">One year</option>
+          <option value="Two year">Two year</option>
+        </select>
+
+        <!-- Payment Method -->
+        <label>Payment Method</label>
+        <select name="payment_method" required>
+          <option value="">Select</option>
+          <option value="Cash">Cash</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Net Banking">Net Banking</option>
+          <option value="UPI">UPI</option>
+        </select>
+
+        <button type="submit">Predict Churn</button>
+      </form>
+    </div>
+  </body>
+</html>
